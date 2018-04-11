@@ -1,8 +1,8 @@
-import {addComment} from './actions'
 import {createStore} from 'redux';
-import app from './reducer.js';
+import reducer from './reducer.js';
+import DevTools from './DevTools';
 
-const store = createStore(app);
+export const store = createStore(reducer, DevTools.instrument());
 
 // Create listener
 const unsubscribe = store.subscribe(() => console.log('zmiana w stanie: subscribe'));
@@ -10,6 +10,3 @@ const unsubscribe = store.subscribe(() => console.log('zmiana w stanie: subscrib
 unsubscribe();
 // Get actual state on every state change
 store.subscribe(() => console.log(store.getState()));
-// Send action to change state
-store.dispatch(addComment('pierwszy komentarz: store.dispatch()'));
-store.dispatch(addComment('drugi komentarz: store.dispatch()'));

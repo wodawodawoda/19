@@ -19,7 +19,6 @@ export function comments(state = [], action) {
     case DELETE_COMMENT:
       return state.comments.filter(comment => comment.id !== action.id);
     case RATE_COMMENT:
-      console.log(state)
       return state.map(val => {
         if(val.id === action.id) {
           return action.rate ? {...val, votes: val.votes + 1} : {...val, votes: val.votes - 1}
