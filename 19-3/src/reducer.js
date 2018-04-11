@@ -3,6 +3,8 @@ import comments from './comments';
 import users from './users';
 
 const app = combineReducers({
-  comments,
-  users
+  users,
+  comments
 });
+
+export default app

@@ -5,7 +5,7 @@ const initialState = {
   users: []
 }
 
-function comments(state = [], action) {
+function comments(state = initialState, action) {
   switch (action.type) {
     case ADD_COMMENT:
       return [{

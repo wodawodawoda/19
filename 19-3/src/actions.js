@@ -5,7 +5,7 @@ export const ADD_COMMENT = 'ADD_COMMENT',
   DELETE_COMMENT = 'DELETE_COMMENT',
   RATE_COMMENT = 'RATE_COMMENT';
 
-function addComment (text = '') {
+export function addComment (text = '') {
   return {
     type: ADD_COMMENT,
     id: uuid.v4(),
@@ -13,7 +13,7 @@ function addComment (text = '') {
   }
 }
 
-function editComment (id, text = '') {
+export function editComment (id, text = '') {
   return {
     type: EDIT_COMMENT,
     id,
@@ -21,14 +21,14 @@ function editComment (id, text = '') {
   }
 }
 
-function deleteComment (id) {
+export function deleteComment (id) {
   return {
     type: DELETE_COMMENT,
     id
   }
 }
 
-function rateComment (id, rate = false) {
+export function rateComment (id, rate = false) {
   return {
     type: RATE_COMMENT,
     id,
