@@ -1,0 +1,11 @@
+ul {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+}
+
+.comment {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 180px;
+}
