@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentsListContainer from './CommentsListContainer'
 import AddCommentContainer from './AddCommentContainer'
+import {hot} from 'react-hot-loader';
 import DevTools from '../redux/DevTools'
 import '../styles/app.css'
 
@@ -9,9 +10,9 @@ const App = () => {
     <div className="App">
       <AddCommentContainer/>
       <CommentsListContainer/>
-      <DevTools/>
+      {/*<DevTools/>*/}
     </div>
   );
 }
 
-export default App;
+export default hot(module)(App);
