@@ -8,8 +8,8 @@ import '../styles/app.css'
 const App = () => {
   return (
     <div className="App">
-      <AddCommentContainer/>
       <CommentsListContainer/>
+      <AddCommentContainer/>
       {/*<DevTools/>*/}
     </div>
   );

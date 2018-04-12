@@ -1,11 +1,125 @@
-ul {
+* {
+    box-sizing: border-box;
+    /*border: 1px solid black;*/
+}
+.App {
+    border: 5px solid black;
+    max-width: 600px;
+}
+.App__comments {
     display: flex;
-    width: 400px;
-    justify-content: space-around;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .comment {
     display: flex;
-    flex-flow: column nowrap;
-    width: 180px;
+    margin: 10px 0;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+}
+
+.comment__text {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 10px
+}
+
+.comment__votes {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 40px;
+    border-right: 5px solid #000;
+}
+.comment__vote {
+    text-align: center;
+}
+
+.comment__btn {
+    cursor: pointer;
+    appearance: none;
+    margin: 0;
+}
+
+.comment__btn--up:after {
+    content: "△";
+}
+
+.comment__btn--down:after {
+    content: "▽";
+}
+
+.comment__options {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    margin-left: auto;
+    position: relative;
+}
+
+.comment__options-open {
+    margin: 0;
+    padding: 5px;
+    height: 100%;
+    z-index: 1;
+    background: white;
+    display: flex;
+    appearance: none;
+    order: 1;
+    cursor: pointer;
+}
+.comment__options-open:after {
+    content: "•••";
+    align-self: center;
+    font-size: 20px;
+}
+.comment__options-open:checked ~ .comment__options--inner {
+    right: 0;
+}
+.comment__options--inner {
+    transition: 0.5s;
+    position: relative;
+    height: 100%;
+    right: -100%;
+    display: flex;
+}
+.comment__btn--edit {
+    margin: 0;
+    padding: 5px;
+    height: 100%;
+    z-index: 1;
+    background: white;
+    display: flex;
+    appearance: none;
+    cursor: pointer;
+}
+
+.comment__btn--edit:after {
+    content: "✎";
+    align-self: center;
+    font-size: 20px;
+}
+.comment__btn--edit:checked ~ .comment__edit {
+    width: 200px;
+}
+
+.comment__edit {
+    position: relative;
+    transition: 0.5s;
+    width: 0px;
+    left: 20px;
+    order: -1;
+}
+
+.App__add-comment {
+    width: 100%;
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+    background: #FFA500;
+    coloe: #fff;
 }
