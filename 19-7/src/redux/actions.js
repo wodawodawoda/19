@@ -2,6 +2,7 @@ import uuid from 'uuid';
 
 export const ADD_COMMENT = 'ADD_COMMENT',
   EDIT_COMMENT = 'EDIT_COMMENT',
+  MAKE_EDITALBLE = 'MAKE_EDITALBLE',
   DELETE_COMMENT = 'DELETE_COMMENT',
   RATE_COMMENT = 'RATE_COMMENT';
 
@@ -18,6 +19,14 @@ export function editComment (id, text = '') {
     type: EDIT_COMMENT,
     id,
     text
+  }
+}
+
+export function makeEditable (id, bool) {
+  return {
+    type: MAKE_EDITALBLE,
+    id,
+    editable: bool
   }
 }
 

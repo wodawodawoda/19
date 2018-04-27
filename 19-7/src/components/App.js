@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <CommentsListContainer/>
       <AddCommentContainer/>
-      {/*<DevTools/>*/}
+      <DevTools/>
     </div>
   );
 }
