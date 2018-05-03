@@ -1,4 +1,4 @@
-import { ADD_COMMENT, EDIT_COMMENT, DELETE_COMMENT, RATE_COMMENT, MAKE_EDITALBLE } from './actions'
+import { ADD_COMMENT, EDIT_COMMENT, DELETE_COMMENT, RATE_COMMENT, MAKE_EDITALBLE } from './actionTypes';
 
 export function comments(state = [], action) {
   switch (action.type) {
@@ -11,7 +11,6 @@ export function comments(state = [], action) {
       }
         , ...state];
     case EDIT_COMMENT:
-    console.log(action)
       return state.map(val => {
         if(val.id === action.id) {
           val.text = action.text
@@ -19,7 +18,6 @@ export function comments(state = [], action) {
         return val
       });
     case MAKE_EDITALBLE:
-      console.log(action)
       return state.map(val => {
         if(val.id === action.id) {
           val.editable = action.editable

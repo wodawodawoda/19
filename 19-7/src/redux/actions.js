@@ -1,10 +1,5 @@
 import uuid from 'uuid';
-
-export const ADD_COMMENT = 'ADD_COMMENT',
-  EDIT_COMMENT = 'EDIT_COMMENT',
-  MAKE_EDITALBLE = 'MAKE_EDITALBLE',
-  DELETE_COMMENT = 'DELETE_COMMENT',
-  RATE_COMMENT = 'RATE_COMMENT';
+import {ADD_COMMENT, EDIT_COMMENT, MAKE_EDITALBLE, DELETE_COMMENT, RATE_COMMENT} from './actionTypes';
 
 export function addComment (text = '') {
   return {

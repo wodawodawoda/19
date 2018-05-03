@@ -96,13 +96,14 @@
     display: flex;
     appearance: none;
     cursor: pointer;
-}
-
-.comment__btn--edit:after {
-    content: "✎";
-    align-self: center;
+    color: #000;
     font-size: 20px;
 }
+
+.comment__btn--active {
+    background: #FFA500;
+}
+
 .comment__btn--edit:checked ~ .comment__edit {
     width: 200px;
 }

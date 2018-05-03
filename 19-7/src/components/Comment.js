@@ -9,15 +9,17 @@ const Comment = ({text, votes, id, rateComment, editComment, deleteComment, make
       <span className="comment__vote">{votes}</span>
       <input type="checkbox" onClick={() => rateComment(id, false)} className="comment__btn comment__btn--down" />
     </div>
-    <span onKeyDown={(e) => editComment(id, e.target.textContent, e.keyCode, e.target)} contentEditable={`${editable}`} className="comment__text">{text}</span>
+    <span onKeyDown={(e) => editComment(id, e.target.textContent, e.keyCode, e.target)}
+          contentEditable={`${editable}`}
+          className="comment__text">{text}</span>
     <div className="comment__options">
-      <input type="checkbox" className="comment__options-open" />
+      <input type="checkbox" className="comment__options-open" id="openMenu" />
       <div className="comment__options--inner">
-        <button onClick={() => makeEditable(id, true)} className="comment__btn comment__btn--edit" />
+        <button onClick={editable ? (e) => makeEditable(id, false, e) : (e) => makeEditable(id, true, e)}
+                className="comment__btn comment__btn--edit">✎</button>
         <button onClick={() => deleteComment(id)} className="comment__btn comment__btn--delete">✘</button>
-        {/*<input type="text" onKeyDown={(e) => editComment(id, e.target.value, e.keyCode)} className="comment__edit"/>*/}
       </div>
     </div>
-  </li>
+  </li>;
 
 export default Comment;
